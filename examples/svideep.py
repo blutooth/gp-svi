@@ -29,9 +29,7 @@ def sparseGP(x):
      return
 
 
-
-
-    def log_marginal_likelihood(self,params, x, y):
+    def log_marginal_likelihood(params, x, y):
         mean, cov_params, noise_scale = self.rbf(params)
         cov_y_y = self.rbf(cov_params, x, x) + noise_scale * np.eye(len(y))
         prior_mean = mean * np.ones(len(y))
